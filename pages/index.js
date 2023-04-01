@@ -31,7 +31,7 @@ export default function Home() {
               $20/mo. thereafter
             </p>
           </div>
-          <form className="bg-white rounded-xl flex flex-col items-center py-5 px-2 gap-4">
+          <form className="bg-white rounded-xl flex flex-col items-center py-6 px-2 gap-4 shadow-[0px_9px_0px_0px_rgba(26,32,44,.15)]">
             <input
               type="text"
               placeholder="First Name"
@@ -44,7 +44,7 @@ export default function Home() {
               placeholder="Password"
               className={inputStyle}
             />
-            <button className="bg-primaryGreen text-white rounded-lg font-medium w-11/12 py-3 shadow-[0px_9px_0px_0px_rgba(26,32,44,.15)]">
+            <button className="bg-primaryGreen text-white rounded-lg font-medium w-11/12 py-3 shadow-[0px_4px_0px_0px_rgba(43,166,113,.9)] ">
               CLAIM YOUR FREE TRIAL
             </button>
             <p className="text-sm text-neutralGrayishBlue w-10/12">

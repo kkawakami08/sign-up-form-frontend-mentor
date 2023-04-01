@@ -113,7 +113,7 @@ export default function Home() {
                 <div className="w-full flex items-center relative justify-center">
                   <input
                     type="email"
-                    placeholder="email"
+                    placeholder="Email"
                     className={inputStyle}
                     onChange={handleChange}
                     name="email"

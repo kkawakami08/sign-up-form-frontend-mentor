@@ -1,7 +1,5 @@
 import Head from "next/head";
 import { useState } from "react";
-import errorIcon from "../public/images/icon-error.svg";
-import Image from "next/image";
 
 export default function Home() {
   const inputStyle =
@@ -79,7 +77,7 @@ export default function Home() {
             <div className="flex flex-col gap-5 px-5 md:w-1/2">
               <div
                 id="button"
-                className="bg-accentBlue py-3 px-10 leading-7 rounded-xl  hover:bg-[#6e64af] hover:cursor-pointer text-center"
+                className="bg-accentBlue py-3 px-10 leading-7 rounded-xl  text-center"
               >
                 <p className="text-white">
                   <span className="font-semibold">Try it free 7 days</span> then

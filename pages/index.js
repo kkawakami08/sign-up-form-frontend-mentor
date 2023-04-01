@@ -1,9 +1,29 @@
 import Head from "next/head";
+import { useState } from "react";
 
 export default function Home() {
-  //normal, medium, semibold, bold
   const inputStyle =
     "font-semibold py-3 px-5 border-neutralGrayishBlue placeholder:text-neutralGrayishBlue border w-11/12 rounded-lg";
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: value,
+      };
+    });
+  }
+
+  console.log(formData.email);
+
   return (
     <>
       <Head>
@@ -36,13 +56,29 @@ export default function Home() {
               type="text"
               placeholder="First Name"
               className={inputStyle}
+              onChange={handleChange}
+              name="firstName"
             />
-            <input type="text" placeholder="Last Name" className={inputStyle} />
-            <input type="email" placeholder="Email" className={inputStyle} />
+            <input
+              type="text"
+              placeholder="Last Name"
+              className={inputStyle}
+              onChange={handleChange}
+              name="lastName"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className={inputStyle}
+              onChange={handleChange}
+              name="email"
+            />
             <input
               type="password"
               placeholder="Password"
               className={inputStyle}
+              onChange={handleChange}
+              name="password"
             />
             <button className="bg-primaryGreen text-white rounded-lg font-medium w-11/12 py-3 shadow-[0px_4px_0px_0px_rgba(43,166,113,.9)] hover:bg-[#61d6a3]">
               CLAIM YOUR FREE TRIAL

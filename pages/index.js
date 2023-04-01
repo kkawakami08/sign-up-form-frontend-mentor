@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function Home() {
   const inputStyle =
-    "font-semibold py-3 px-5 border-neutralGrayishBlue placeholder:text-neutralGrayishBlue border w-11/12 rounded-lg";
+    "font-semibold py-3 px-5 border-neutralGrayishBlue placeholder:text-neutralGrayishBlue border w-11/12 rounded-lg focus:invalid:border-primaryRed focus:invalid:text-primaryRed  focus:outline-none valid:border-primaryGreen";
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -58,6 +58,8 @@ export default function Home() {
               className={inputStyle}
               onChange={handleChange}
               name="firstName"
+              value={formData.firstName}
+              required
             />
             <input
               type="text"
@@ -65,6 +67,8 @@ export default function Home() {
               className={inputStyle}
               onChange={handleChange}
               name="lastName"
+              value={formData.lastName}
+              required
             />
             <input
               type="email"
@@ -72,6 +76,8 @@ export default function Home() {
               className={inputStyle}
               onChange={handleChange}
               name="email"
+              value={formData.email}
+              required
             />
             <input
               type="password"
@@ -79,6 +85,8 @@ export default function Home() {
               className={inputStyle}
               onChange={handleChange}
               name="password"
+              value={formData.password}
+              required
             />
             <button className="bg-primaryGreen text-white rounded-lg font-medium w-11/12 py-3 shadow-[0px_4px_0px_0px_rgba(43,166,113,.9)] hover:bg-[#61d6a3]">
               CLAIM YOUR FREE TRIAL

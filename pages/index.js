@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
+import errorIcon from "../public/images/icon-error.svg";
+import Image from "next/image";
 
 export default function Home() {
   const inputStyle =
@@ -52,15 +54,31 @@ export default function Home() {
             </p>
           </div>
           <form className="bg-white rounded-xl flex flex-col items-center py-6 px-2 gap-4 shadow-[0px_9px_0px_0px_rgba(26,32,44,.15)]">
-            <input
-              type="text"
-              placeholder="First Name"
-              className={inputStyle}
-              onChange={handleChange}
-              name="firstName"
-              value={formData.firstName}
-              required
-            />
+            <div className="w-full flex flex-col gap-1">
+              <div className="flex items-center relative justify-center">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  className={inputStyle}
+                  onChange={handleChange}
+                  name="firstName"
+                  value={formData.firstName}
+                  required
+                />
+                <div className="w-5 absolute right-10">
+                  <Image
+                    src={errorIcon}
+                    alt="Error Icon"
+                    width={500}
+                    height={500}
+                  />
+                </div>
+              </div>
+              <p className="text-primaryRed text-xs italic self-end pr-5">
+                Field cannot be empty
+              </p>
+            </div>
+
             <input
               type="text"
               placeholder="Last Name"

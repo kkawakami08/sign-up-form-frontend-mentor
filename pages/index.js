@@ -12,7 +12,7 @@ export default function Home() {
     lastName: "",
     email: "",
     password: "",
-    valid: true,
+    message: false,
   });
 
   function handleChange(event) {
@@ -27,17 +27,17 @@ export default function Home() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("HI");
   }
-
-  console.log(formData.email);
 
   return (
     <>
       <Head>
         <title>Create Next App</title>
       </Head>
-      <main className="bg-primaryRed h-full bg-[url('../public/images/bg-intro-mobile.png')] flex flex-col items-center px-7 py-20 text-center gap-16 md:flex-row md:px-28">
+      <main className="bg-primaryRed h-full bg-[url('../public/images/bg-intro-mobile.png')] flex flex-col items-center px-7 py-20 text-center gap-16 md:flex-row md:px-28 relative">
+        <div className="absolute">
+          <h1>THANK YOU</h1>
+        </div>
         <div className="flex flex-col items-center gap-7 md:items-start md:w-1/2">
           <h1 className="text-white text-3xl font-bold md:text-left md:text-4xl">
             Learn to code by watching others
@@ -63,121 +63,49 @@ export default function Home() {
             className="bg-white rounded-xl flex flex-col items-center py-6 px-2 gap-4 shadow-[0px_9px_0px_0px_rgba(26,32,44,.15)]"
             onSubmit={handleSubmit}
           >
-            <div className="w-full flex flex-col gap-1">
-              <div className="flex items-center relative justify-center">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className={inputStyle}
-                  onChange={handleChange}
-                  name="firstName"
-                  value={formData.firstName}
-                  required
-                />
-
-                {!formData.valid && (
-                  <div className="w-5 absolute right-10">
-                    <Image
-                      src={errorIcon}
-                      alt="Error Icon"
-                      width={500}
-                      height={500}
-                    />
-                  </div>
-                )}
-              </div>
-              {!formData.valid && (
-                <p className="text-primaryRed text-xs italic self-end pr-5">
-                  Field cannot be empty
-                </p>
-              )}
+            <div className="w-full flex items-center relative justify-center">
+              <input
+                type="text"
+                placeholder="First Name"
+                className={inputStyle}
+                onChange={handleChange}
+                name="firstName"
+                value={formData.firstName}
+                required
+              />
             </div>
-
-            <div className="w-full flex flex-col gap-1">
-              <div className="flex items-center relative justify-center">
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className={inputStyle}
-                  onChange={handleChange}
-                  name="lastName"
-                  value={formData.lastName}
-                  required
-                />
-                {!formData.valid && (
-                  <div className="w-5 absolute right-10">
-                    <Image
-                      src={errorIcon}
-                      alt="Error Icon"
-                      width={500}
-                      height={500}
-                    />
-                  </div>
-                )}
-              </div>
-              {!formData.valid && (
-                <p className="text-primaryRed text-xs italic self-end pr-5">
-                  Field cannot be empty
-                </p>
-              )}
+            <div className="w-full flex items-center relative justify-center">
+              <input
+                type="text"
+                placeholder="Last Name"
+                className={inputStyle}
+                onChange={handleChange}
+                name="lastName"
+                value={formData.lastName}
+                required
+              />
             </div>
-
-            <div className="w-full flex flex-col gap-1">
-              <div className="flex items-center relative justify-center">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className={inputStyle}
-                  onChange={handleChange}
-                  name="email"
-                  value={formData.email}
-                  required
-                />
-                {!formData.valid && (
-                  <div className="w-5 absolute right-10">
-                    <Image
-                      src={errorIcon}
-                      alt="Error Icon"
-                      width={500}
-                      height={500}
-                    />
-                  </div>
-                )}
-              </div>
-              {!formData.valid && (
-                <p className="text-primaryRed text-xs italic self-end pr-5">
-                  Field cannot be empty
-                </p>
-              )}
+            <div className="w-full flex items-center relative justify-center">
+              <input
+                type="email"
+                placeholder="email"
+                className={inputStyle}
+                onChange={handleChange}
+                name="email"
+                value={formData.email}
+                required
+              />
             </div>
-
-            <div className="w-full flex flex-col gap-1">
-              <div className="flex items-center relative justify-center">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  className={inputStyle}
-                  onChange={handleChange}
-                  name="password"
-                  value={formData.password}
-                  required
-                />
-                {!formData.valid && (
-                  <div className="w-5 absolute right-10">
-                    <Image
-                      src={errorIcon}
-                      alt="Error Icon"
-                      width={500}
-                      height={500}
-                    />
-                  </div>
-                )}
-              </div>
-              {!formData.valid && (
-                <p className="text-primaryRed text-xs italic self-end pr-5">
-                  Field cannot be empty
-                </p>
-              )}
+            <div className="w-full flex items-center relative justify-center">
+              <input
+                type="text"
+                placeholder="Password"
+                className={inputStyle}
+                onChange={handleChange}
+                name="password"
+                value={formData.password}
+                required
+              />
             </div>
 
             <button className="bg-primaryGreen text-white rounded-lg font-medium w-11/12 py-3 shadow-[0px_4px_0px_0px_rgba(43,166,113,.9)] hover:bg-[#61d6a3]">

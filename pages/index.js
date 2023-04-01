@@ -48,7 +48,7 @@ export default function Home() {
       <Head>
         <title>Create Next App</title>
       </Head>
-      <main className="bg-primaryRed  bg-[url('/public/images/bg-intro-mobile.png')] relative w-screen h-full md:h-screen">
+      <main className="bg-primaryRed  bg-[url('/images/bg-intro-mobile.png')] relative w-screen h-full md:h-screen">
         {formData.message ? (
           <div className=" bg-primaryRed w-screen h-screen z-10 absolute top-0 left-0 px-10 justify-center flex flex-col gap-10 items-center ">
             <h1 className="text-3xl font-semibold text-white text-center">

@@ -20,6 +20,9 @@ module.exports = {
       fontFamily: {
         sans: ["Poppins", "Arial", "sans-serif"],
       },
+      // backgroundImage: {
+      //   'background': "url('/public/images/bg-intro-mobile.png')",
+      // }
     },
   },
   plugins: [],

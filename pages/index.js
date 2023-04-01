@@ -12,6 +12,7 @@ export default function Home() {
     lastName: "",
     email: "",
     password: "",
+    valid: true,
   });
 
   function handleChange(event) {
@@ -22,6 +23,11 @@ export default function Home() {
         [name]: value,
       };
     });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log("HI");
   }
 
   console.log(formData.email);
@@ -53,7 +59,10 @@ export default function Home() {
               $20/mo. thereafter
             </p>
           </div>
-          <form className="bg-white rounded-xl flex flex-col items-center py-6 px-2 gap-4 shadow-[0px_9px_0px_0px_rgba(26,32,44,.15)]">
+          <form
+            className="bg-white rounded-xl flex flex-col items-center py-6 px-2 gap-4 shadow-[0px_9px_0px_0px_rgba(26,32,44,.15)]"
+            onSubmit={handleSubmit}
+          >
             <div className="w-full flex flex-col gap-1">
               <div className="flex items-center relative justify-center">
                 <input
@@ -65,47 +74,112 @@ export default function Home() {
                   value={formData.firstName}
                   required
                 />
-                <div className="w-5 absolute right-10">
-                  <Image
-                    src={errorIcon}
-                    alt="Error Icon"
-                    width={500}
-                    height={500}
-                  />
-                </div>
+
+                {!formData.valid && (
+                  <div className="w-5 absolute right-10">
+                    <Image
+                      src={errorIcon}
+                      alt="Error Icon"
+                      width={500}
+                      height={500}
+                    />
+                  </div>
+                )}
               </div>
-              <p className="text-primaryRed text-xs italic self-end pr-5">
-                Field cannot be empty
-              </p>
+              {!formData.valid && (
+                <p className="text-primaryRed text-xs italic self-end pr-5">
+                  Field cannot be empty
+                </p>
+              )}
             </div>
 
-            <input
-              type="text"
-              placeholder="Last Name"
-              className={inputStyle}
-              onChange={handleChange}
-              name="lastName"
-              value={formData.lastName}
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className={inputStyle}
-              onChange={handleChange}
-              name="email"
-              value={formData.email}
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              className={inputStyle}
-              onChange={handleChange}
-              name="password"
-              value={formData.password}
-              required
-            />
+            <div className="w-full flex flex-col gap-1">
+              <div className="flex items-center relative justify-center">
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  className={inputStyle}
+                  onChange={handleChange}
+                  name="lastName"
+                  value={formData.lastName}
+                  required
+                />
+                {!formData.valid && (
+                  <div className="w-5 absolute right-10">
+                    <Image
+                      src={errorIcon}
+                      alt="Error Icon"
+                      width={500}
+                      height={500}
+                    />
+                  </div>
+                )}
+              </div>
+              {!formData.valid && (
+                <p className="text-primaryRed text-xs italic self-end pr-5">
+                  Field cannot be empty
+                </p>
+              )}
+            </div>
+
+            <div className="w-full flex flex-col gap-1">
+              <div className="flex items-center relative justify-center">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className={inputStyle}
+                  onChange={handleChange}
+                  name="email"
+                  value={formData.email}
+                  required
+                />
+                {!formData.valid && (
+                  <div className="w-5 absolute right-10">
+                    <Image
+                      src={errorIcon}
+                      alt="Error Icon"
+                      width={500}
+                      height={500}
+                    />
+                  </div>
+                )}
+              </div>
+              {!formData.valid && (
+                <p className="text-primaryRed text-xs italic self-end pr-5">
+                  Field cannot be empty
+                </p>
+              )}
+            </div>
+
+            <div className="w-full flex flex-col gap-1">
+              <div className="flex items-center relative justify-center">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  className={inputStyle}
+                  onChange={handleChange}
+                  name="password"
+                  value={formData.password}
+                  required
+                />
+                {!formData.valid && (
+                  <div className="w-5 absolute right-10">
+                    <Image
+                      src={errorIcon}
+                      alt="Error Icon"
+                      width={500}
+                      height={500}
+                    />
+                  </div>
+                )}
+              </div>
+              {!formData.valid && (
+                <p className="text-primaryRed text-xs italic self-end pr-5">
+                  Field cannot be empty
+                </p>
+              )}
+            </div>
+
             <button className="bg-primaryGreen text-white rounded-lg font-medium w-11/12 py-3 shadow-[0px_4px_0px_0px_rgba(43,166,113,.9)] hover:bg-[#61d6a3]">
               CLAIM YOUR FREE TRIAL
             </button>

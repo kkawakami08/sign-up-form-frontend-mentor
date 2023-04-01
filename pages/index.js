@@ -24,7 +24,7 @@ export default function Home() {
         <div className="flex flex-col gap-5">
           <div
             id="button"
-            className="bg-accentBlue py-3 px-10 leading-7 rounded-xl shadow-[0px_9px_0px_0px_rgba(26,32,44,.15)]"
+            className="bg-accentBlue py-3 px-10 leading-7 rounded-xl shadow-[0px_9px_0px_0px_rgba(26,32,44,.15)] hover:bg-[#6e64af] hover:cursor-pointer"
           >
             <p className="text-white">
               <span className="font-semibold">Try it free 7 days</span> then
@@ -44,7 +44,7 @@ export default function Home() {
               placeholder="Password"
               className={inputStyle}
             />
-            <button className="bg-primaryGreen text-white rounded-lg font-medium w-11/12 py-3 shadow-[0px_4px_0px_0px_rgba(43,166,113,.9)] ">
+            <button className="bg-primaryGreen text-white rounded-lg font-medium w-11/12 py-3 shadow-[0px_4px_0px_0px_rgba(43,166,113,.9)] hover:bg-[#61d6a3]">
               CLAIM YOUR FREE TRIAL
             </button>
             <p className="text-sm text-neutralGrayishBlue w-10/12">

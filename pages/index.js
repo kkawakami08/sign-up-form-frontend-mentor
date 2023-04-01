@@ -9,12 +9,12 @@ export default function Home() {
       <Head>
         <title>Create Next App</title>
       </Head>
-      <main className="bg-primaryRed h-full bg-[url('../public/images/bg-intro-mobile.png')] flex flex-col items-center px-7 py-20 text-center gap-16">
-        <div className="flex flex-col items-center gap-7">
-          <h1 className="text-white text-3xl font-bold ">
+      <main className="bg-primaryRed h-full bg-[url('../public/images/bg-intro-mobile.png')] flex flex-col items-center px-7 py-20 text-center gap-16 md:flex-row md:px-28">
+        <div className="flex flex-col items-center gap-7 md:items-start md:w-1/2">
+          <h1 className="text-white text-3xl font-bold md:text-left md:text-4xl">
             Learn to code by watching others
           </h1>
-          <p className="text-white font-medium">
+          <p className="text-white font-normal md:text-left ">
             See how experienced developers solve problems in real-time. Watching
             scripted tutorials is great, but understanding how developers think
             is invaluable.
